@@ -12,6 +12,7 @@ import java.util.Optional;
 import com.buthdev.demo.dtos.BoardColumnDTO;
 import com.buthdev.demo.persistence.entities.BoardColumnEntity;
 import com.buthdev.demo.persistence.entities.CardEntity;
+import com.mysql.cj.jdbc.StatementImpl;
 
 import lombok.RequiredArgsConstructor;
 

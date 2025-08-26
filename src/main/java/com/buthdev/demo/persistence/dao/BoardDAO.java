@@ -1,12 +1,12 @@
 package com.buthdev.demo.persistence.dao;
 
 import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.Optional;
 
 import com.buthdev.demo.persistence.entities.BoardEntity;
+import com.mysql.cj.jdbc.StatementImpl;
+
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor

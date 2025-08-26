@@ -14,6 +14,8 @@ import com.buthdev.demo.services.CardService;
 
 import lombok.AllArgsConstructor;
 
+import static com.buthdev.demo.persistence.config.ConnectionConfig.getConnection;
+
 @AllArgsConstructor
 public class BoardMenu {
 

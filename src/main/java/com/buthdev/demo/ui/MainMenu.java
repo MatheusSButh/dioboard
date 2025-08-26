@@ -11,6 +11,12 @@ import com.buthdev.demo.persistence.entities.BoardEntity;
 import com.buthdev.demo.services.BoardQueryService;
 import com.buthdev.demo.services.BoardService;
 
+import static com.buthdev.demo.persistence.config.ConnectionConfig.getConnection;
+import static com.buthdev.demo.persistence.entities.BoardColumnKindEnum.CANCEL;
+import static com.buthdev.demo.persistence.entities.BoardColumnKindEnum.FINAL;
+import static com.buthdev.demo.persistence.entities.BoardColumnKindEnum.INITIAL;
+import static com.buthdev.demo.persistence.entities.BoardColumnKindEnum.PENDING;
+
 public class MainMenu {
 
     private final Scanner scanner = new Scanner(System.in).useDelimiter("\n");

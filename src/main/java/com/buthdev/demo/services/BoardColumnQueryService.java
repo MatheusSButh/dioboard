@@ -4,6 +4,9 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Optional;
 
+import com.buthdev.demo.persistence.dao.BoardColumnDAO;
+import com.buthdev.demo.persistence.entities.BoardColumnEntity;
+
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor

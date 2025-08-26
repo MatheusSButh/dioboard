@@ -34,7 +34,15 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
-
+		<dependency>
+    		<groupId>mysql</groupId>
+    		<artifactId>mysql-connector-java</artifactId>
+    		<version>8.0.33</version>
+		</dependency>
+		<dependency>
+    		<groupId>org.liquibase</groupId>
+    		<artifactId>liquibase-core</artifactId>
+    		<version>4.27.0</version> </dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>

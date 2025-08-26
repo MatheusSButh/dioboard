@@ -1,5 +1,8 @@
 package com.buthdev.demo.services;
 
+
+
+
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
@@ -10,10 +13,11 @@ import com.buthdev.demo.exceptions.CardFinishedException;
 import com.buthdev.demo.exceptions.EntityNotFoundException;
 import com.buthdev.demo.persistence.dao.BlockDAO;
 import com.buthdev.demo.persistence.dao.CardDAO;
+import com.buthdev.demo.persistence.entities.BoardColumnKindEnum;
 import com.buthdev.demo.persistence.entities.CardEntity;
 
 import lombok.AllArgsConstructor;
-
+import static lombok.AccessLevel.PRIVATE;
 @AllArgsConstructor
 public class CardService {
 
@@ -46,7 +50,7 @@ public class CardService {
                     .filter(bc -> bc.id().equals(dto.columnId()))
                     .findFirst()
                     .orElseThrow(() -> new IllegalStateException("O card informado pertence a outro board"));
-            if (currentColumn.kind().equals(FINAL)){
+            if (currentColumn.kind().equals(BoardColumnKindEnum.FINAL)){
                 throw new CardFinishedException("O card já foi finalizado");
             }
             var nextColumn = boardColumnsInfo.stream()
@@ -76,7 +80,7 @@ public class CardService {
                     .filter(bc -> bc.id().equals(dto.columnId()))
                     .findFirst()
                     .orElseThrow(() -> new IllegalStateException("O card informado pertence a outro board"));
-            if (currentColumn.kind().equals(FINAL)){
+            if (currentColumn.kind().equals(BoardColumnKindEnum.FINAL)){
                 throw new CardFinishedException("O card já foi finalizado");
             }
             boardColumnsInfo.stream()
@@ -105,7 +109,7 @@ public class CardService {
                     .filter(bc -> bc.id().equals(dto.columnId()))
                     .findFirst()
                     .orElseThrow();
-            if (currentColumn.kind().equals(FINAL) || currentColumn.kind().equals(CANCEL)){
+            if (currentColumn.kind().equals(BoardColumnKindEnum.FINAL) || currentColumn.kind().equals(BoardColumnKindEnum.CANCEL)){
                 var message = "O card está em uma coluna do tipo %s e não pode ser bloqueado"
                         .formatted(currentColumn.kind());
                 throw new IllegalStateException();

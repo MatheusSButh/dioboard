@@ -8,6 +8,10 @@ import java.io.PrintStream;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+import liquibase.Liquibase;
+import liquibase.database.jvm.JdbcConnection;
+import liquibase.exception.LiquibaseException;
+import liquibase.resource.ClassLoaderResourceAccessor;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
